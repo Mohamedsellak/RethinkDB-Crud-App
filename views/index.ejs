@@ -1,0 +1,26 @@
+<div>
+    <h1 class="text text-center text-primary fw-bold mb-5 ">User List</h1>
+    <div class="d-flex">
+        <% data.forEach(user => { %>
+            <div class="card text-center mb-3 mx-3" style="width: 18rem;">
+                <div class="card-header fw-bold">
+                    <%= user.name %>
+                </div>
+                <div class="card-body">
+                  <h5 class="card-title">City: <%= user.city %></h5>
+                  <p class="card-text">Age: <%= user.age %></p>
+                  <a href="update/<%= user.id %>" class="btn btn-success">Edit</a>
+                </div>
+                <div class="card-footer text-body-secondary">
+                    <form action="/user/delete/<%= user.id %>" method="post">
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                </div>
+              </div>
+        <% }); %>
+    </div>
+
+    <a href="/create" class="btn btn-primary bt-5">Create user</a>
+</div>
+
+

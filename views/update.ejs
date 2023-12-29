@@ -1,0 +1,9 @@
+<div>
+    <h1>Update</h1>
+    <form action="/user/update/<%= user.id %>" method="post">
+        name<input type="text" name='name' value="<%= user.name %>"><br>
+        age<input type="text" name='age' value="<%= user.age %>"><br>
+        city<input type="text" name='city' value="<%= user.city %>"><br>
+        <button type="submit">Create</button>
+    </form>
+</div>
