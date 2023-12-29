@@ -1,10 +1,11 @@
+require('dotenv').config()
 r = require('rethinkdb')
 
 function connect() {
     return r.connect({
-        host: 'localhost', // RethinkDB server host
-        port: 28015,        // RethinkDB server port
-        db: 'mydb' // database name
+        host: process.env.DB_HOST || 'localhost',   // RethinkDB server host
+        port: process.env.DB_PORT || 28015,        // RethinkDB server port
+        db: process.env.DB_NAME   || 'mydb'       // database name
     });
 }
 
